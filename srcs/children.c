@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:50:47 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/11/14 12:43:14 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/11/14 13:46:46 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	child1_process(t_pipex *p)
 
 void	child2_process(t_pipex *p)
 {
-	if (p->fd2 < 0)
+	if (p->fd2 < 0 || p->fd1 < 0)
 		exit (1);
 	if (dup2(p->pfd[READ_END], STDIN_FILENO) == -1)
 	{
