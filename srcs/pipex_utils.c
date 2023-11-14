@@ -6,7 +6,7 @@
 /*   By: jsteenpu <jsteenpu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:44:36 by jsteenpu          #+#    #+#             */
-/*   Updated: 2023/11/13 16:49:58 by jsteenpu         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:42:37 by jsteenpu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	**find_binary_paths(char **envp)
 	while (paths[i])
 	{
 		paths[i] = ft_strjoin(paths[i], "/");
-		if (!paths[i]) // ajusted??
+		if (!paths[i])
 		{
 			free_array(paths);
 			return (NULL);
@@ -78,7 +78,7 @@ void	execute_cmd(char **cmd_args, t_pipex *p)
 		free(cmd_path);
 		i++;
 	}
-	ft_putstr_fd(cmd_args[0], 2); // adjusted
-	ft_putstr_fd(": command not found\n", 2); // adjusted
-	exit (127); // adjusted
+	ft_putstr_fd(cmd_args[0], 2);
+	ft_putstr_fd(": command not found\n", 2);
+	exit (127);
 }
